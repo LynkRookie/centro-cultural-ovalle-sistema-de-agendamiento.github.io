@@ -39,17 +39,19 @@
   <h1>404</h1>
   <p>Página no encontrada</p>
   <p>Redirigiendo...</p>
-  <a id="fallback-link" href="/">Ir al inicio ahora</a>
+  <a id="fallback-link" href="/centro-cultural-ovalle-sistema-de-agendamiento.github.io/">Ir al inicio ahora</a>
 
   <script>
-    // Captura la URL original después del dominio
+    // Base de tu proyecto en GitHub Pages
+    const base = "/centro-cultural-ovalle-sistema-de-agendamiento.github.io";
+
+    // Captura la ruta original después del dominio
     const path = window.location.pathname;
 
     // Espera un momento antes de redirigir
     setTimeout(() => {
-      // Redirige al inicio agregando la ruta original como hash
-      // Esto permite que React Router la interprete
-      window.location.href = '/#' + path;
+      // Redirige correctamente usando la base y hash para React Router
+      window.location.href = base + '/#' + path;
     }, 1500);
   </script>
 </body>
