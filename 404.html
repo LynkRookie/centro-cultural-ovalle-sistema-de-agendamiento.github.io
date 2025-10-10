@@ -3,19 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="refresh" content="2; URL=lynkrookie.github.io/centro-cultural-ovalle-sistema-de-agendamiento.github.io" /> <!-- Redirige en 2 segundos -->
-  <title>Página no encontrada - Centro Cultural</title>
+  <title>Redirigiendo...</title>
   <style>
-    :root {
-      --background: #1a1a1a;
-      --foreground: #ffffff;
-      --accent: #00a86b;
-      --link: #00ff99;
-    }
-
     body {
-      background-color: var(--background);
-      color: var(--foreground);
+      background-color: #1a1a1a;
+      color: white;
       font-family: Arial, sans-serif;
       display: flex;
       flex-direction: column;
@@ -25,47 +17,40 @@
       margin: 0;
       text-align: center;
     }
-
     h1 {
+      color: #00a86b;
       font-size: 4rem;
-      color: var(--accent);
-      margin: 0.5rem 0;
     }
-
-    p {
+    p, a {
       font-size: 1.25rem;
-      margin: 0.5rem 0;
     }
-
     a {
-      color: var(--link);
+      color: #00ff99;
       text-decoration: none;
       font-weight: bold;
       margin-top: 1rem;
     }
-
     a:hover {
       text-decoration: underline;
-    }
-
-    @media (prefers-color-scheme: light) {
-      body {
-        background-color: #f9f9f9;
-        color: #1a1a1a;
-      }
-      h1 {
-        color: #00796b;
-      }
-      a {
-        color: #006400;
-      }
     }
   </style>
 </head>
 <body>
   <h1>404</h1>
   <p>Página no encontrada</p>
-  <p>Serás redirigido al inicio en 2 segundos...</p>
-  <a href="lynkrookie.github.io/centro-cultural-ovalle-sistema-de-agendamiento.github.io">Ir al inicio ahora</a>
+  <p>Redirigiendo...</p>
+  <a id="fallback-link" href="/">Ir al inicio ahora</a>
+
+  <script>
+    // Captura la URL original después del dominio
+    const path = window.location.pathname;
+
+    // Espera un momento antes de redirigir
+    setTimeout(() => {
+      // Redirige al inicio agregando la ruta original como hash
+      // Esto permite que React Router la interprete
+      window.location.href = '/#' + path;
+    }, 1500);
+  </script>
 </body>
 </html>
